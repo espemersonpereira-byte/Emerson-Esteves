@@ -1,0 +1,6 @@
+{
+  "name": "Cálculos — Controle de Trabalho e Horas",
+  "description": "Aplicativo para registrar trabalhos freelancers, calcular horas líquidas e extras, controlar pagamentos de serviços e vale-transporte, com tema automático e suporte para modo escuro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

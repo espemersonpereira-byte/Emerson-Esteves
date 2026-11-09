@@ -1,0 +1,248 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile, professional credentials, and preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "username": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "prefs": {
+          "type": "object",
+          "properties": {
+            "goal": { "type": "number" },
+            "goalMonth": { "type": "string" },
+            "annualGoal": { "type": "number" },
+            "displayName": { "type": "string" },
+            "phone": { "type": "string" },
+            "email": { "type": "string" },
+            "profession": { "type": "string" },
+            "bio": { "type": "string" },
+            "companyName": { "type": "string" },
+            "cnpj": { "type": "string" },
+            "pixKey": { "type": "string" },
+            "businessAddress": { "type": "string" },
+            "activityType": { "type": "string" },
+            "crf": { "type": "string" },
+            "councilType": { "type": "string" },
+            "councilOther": { "type": "string" },
+            "councilNumber": { "type": "string" },
+            "councilUf": { "type": "string" },
+            "professionalId": { "type": "string" },
+            "theme": { "type": "string" },
+            "photo": { "type": "string" }
+          }
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "Job": {
+      "title": "Job",
+      "description": "Freelance service, shift, work order and payment record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "completedAt": { "type": "string" },
+        "profession": { "type": "string" },
+        "place": { "type": "string" },
+        "task": { "type": "string" },
+        "clientId": { "type": "string" },
+        "start": { "type": "string" },
+        "end": { "type": "string" },
+        "break": { "type": "number" },
+        "ratetype": { "type": "string" },
+        "rate": { "type": "number" },
+        "fixed": { "type": "number" },
+        "extraHours": { "type": "number" },
+        "extraRate": { "type": "number" },
+        "paid": { "type": "number" },
+        "transport": { "type": "number" },
+        "transportstatus": { "type": "string" },
+        "transportDate": { "type": "string" },
+        "transportMethod": { "type": "string" },
+        "paydate": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "method": { "type": "string" },
+        "expenses": { "type": "number" },
+        "expenseNote": { "type": "string" },
+        "materials": { "type": "string" },
+        "address": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "date"]
+    },
+    "Client": {
+      "title": "Client",
+      "description": "Customer, company, or workplace record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "email": { "type": "string" },
+        "document": { "type": "string" },
+        "cep": { "type": "string" },
+        "state": { "type": "string" },
+        "city": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "street": { "type": "string" },
+        "number": { "type": "string" },
+        "complement": { "type": "string" },
+        "reference": { "type": "string" },
+        "address": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "name"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Scheduled commitment or agenda entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "endTime": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "clientId": { "type": "string" },
+        "jobId": { "type": "string" },
+        "place": { "type": "string" },
+        "address": { "type": "string" },
+        "task": { "type": "string" },
+        "value": { "type": "number" },
+        "reminder": { "type": "string" },
+        "status": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "date"]
+    },
+    "ExpenseRecord": {
+      "title": "ExpenseRecord",
+      "description": "Standalone professional expense record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" },
+        "jobId": { "type": "string" },
+        "clientId": { "type": "string" },
+        "receiptNote": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "description", "amount", "date"]
+    },
+    "RevenueRecord": {
+      "title": "RevenueRecord",
+      "description": "Standalone revenue entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" },
+        "clientId": { "type": "string" },
+        "jobId": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "description", "amount", "date"]
+    },
+    "Quote": {
+      "title": "Quote",
+      "description": "Professional service quote/proposal",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "number": { "type": "string" },
+        "clientId": { "type": "string" },
+        "date": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "discount": { "type": "number" },
+        "paymentTerms": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "date", "status"]
+    },
+    "ServiceCatalogItem": {
+      "title": "ServiceCatalogItem",
+      "description": "Reusable service catalog entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "suggestedPrice": { "type": "number" },
+        "priceType": { "type": "string" },
+        "estimatedDurationMinutes": { "type": "number" },
+        "category": { "type": "string" },
+        "materials": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "name"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile and global preferences"
+    },
+    "/users/{userId}/jobs/{jobId}": {
+      "schema": "Job",
+      "description": "User shifts, freelance jobs and payment records"
+    },
+    "/users/{userId}/clients/{clientId}": {
+      "schema": "Client",
+      "description": "User clients and companies directory"
+    },
+    "/users/{userId}/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "User appointments and agenda entries"
+    },
+    "/users/{userId}/expenses/{expenseId}": {
+      "schema": "ExpenseRecord",
+      "description": "User standalone professional expenses"
+    },
+    "/users/{userId}/revenues/{revenueId}": {
+      "schema": "RevenueRecord",
+      "description": "User standalone revenue entries"
+    },
+    "/users/{userId}/quotes/{quoteId}": {
+      "schema": "Quote",
+      "description": "User quotes and commercial proposals"
+    },
+    "/users/{userId}/catalog/{catalogId}": {
+      "schema": "ServiceCatalogItem",
+      "description": "User reusable service catalog"
+    }
+  }
+}

@@ -1,0 +1,286 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --navy: #101D32;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --secondary: #3B82F6;
+  --accent-light: #60A5FA;
+  --canvas: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-elevated: #F8FAFC;
+  --g: #2563EB;
+  --g2: #3B82F6;
+  --sage: #DBEAFE;
+  --cream: #F1F5F9;
+  --paper: #FFFFFF;
+  --card-elevated: #F8FAFC;
+  --copper: #2563EB;
+  --ink: #172B4D;
+  --muted: #64748B;
+  --line: #E2E8F0;
+  --success: #16A36A;
+  --danger: #DC4545;
+  --warning: #F59E0B;
+  --red: #DC4545;
+  --red-bg: #FEF2F2;
+  --card-shadow: 0 1px 3px 0 rgba(16, 29, 50, 0.06), 0 1px 2px -1px rgba(16, 29, 50, 0.04);
+}
+
+html.dark, body.dark-theme {
+  --navy: #0B1324;
+  --primary: #3B82F6;
+  --primary-hover: #60A5FA;
+  --secondary: #60A5FA;
+  --accent-light: #93C5FD;
+  --canvas: #0B1324;
+  --surface: #101D32;
+  --surface-elevated: #162540;
+  --g: #2563EB;
+  --g2: #3B82F6;
+  --sage: #1E3254;
+  --cream: #0B1324;
+  --paper: #101D32;
+  --card-elevated: #162540;
+  --copper: #60A5FA;
+  --ink: #F1F5F9;
+  --muted: #94A3B8;
+  --line: #1E3254;
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --red: #EF4444;
+  --red-bg: #2A1215;
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.font-serif-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Previne zoom automático do Safari / iOS / Android ao focar em inputs */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+  touch-action: manipulation;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+/* iOS Safe Area utilities for notch, status bar, and bottom home indicator */
+.pt-safe {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 0.5rem);
+}
+
+.pt-safe-login {
+  padding-top: max(2.5rem, calc(env(safe-area-inset-top, 0px) + 1.85rem));
+}
+
+.pb-safe-login {
+  padding-bottom: max(1.5rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem));
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+.pb-main-safe {
+  padding-bottom: calc(6.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 1024px) {
+  .pb-main-safe {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Print styling: COMPATIBILIDADE TOTAL COM IOS SAFARI, ANDROID E DESKTOP */
+@media print {
+  @page {
+    margin: 6mm;
+    size: auto;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.is-printing-receipt > #root,
+  body.is-printing-receipt > *:not(#direct-print-portal) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+  }
+
+  body.is-printing-receipt > #direct-print-portal {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  body.is-printing-receipt > #direct-print-portal * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #root > div > header,
+  #root > div > aside,
+  #root > div > main,
+  #root > div > nav,
+  .no-print,
+  button,
+  .toast-container {
+    display: none !important;
+  }
+
+  #root,
+  #root > div,
+  .receipt-modal-overlay,
+  .receipt-modal-box,
+  .receipt-modal-body,
+  .fixed,
+  .fixed.inset-0,
+  .overflow-hidden,
+  .overflow-y-auto {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #receipt-print-area {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #receipt-print-area.cupom-fiscal-style {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+    border: 1px dashed #475569 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    transform: none !important;
+    position: static !important;
+    font-size: 9pt !important;
+    line-height: 1.35 !important;
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  #receipt-print-area .justify-between {
+    display: flex !important;
+  }
+
+  #report-print-area {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 4mm !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+  }
+}

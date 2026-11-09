@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+    <defs>
+      <radialGradient id="navyBg" cx="50%" cy="46%" r="65%">
+        <stop offset="0%" stop-color="#13264A" />
+        <stop offset="55%" stop-color="#0E1C36" />
+        <stop offset="100%" stop-color="#0A1324" />
+      </radialGradient>
+      <linearGradient id="topF" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F6F7FB" />
+        <stop offset="100%" stop-color="#DCE3F0" />
+      </linearGradient>
+      <linearGradient id="midF" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#4B92FA" />
+        <stop offset="100%" stop-color="#357BF2" />
+      </linearGradient>
+      <linearGradient id="upperOrbit" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#5B95F0" />
+        <stop offset="55%" stop-color="#4A89EE" />
+        <stop offset="100%" stop-color="#387CEB" />
+      </linearGradient>
+      <linearGradient id="lowerOrbit" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#557BB2" />
+        <stop offset="50%" stop-color="#496D9E" />
+        <stop offset="100%" stop-color="#3F5F8A" />
+      </linearGradient>
+      <linearGradient id="caseTop" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#DEE5F0" />
+        <stop offset="100%" stop-color="#CBD4E2" />
+      </linearGradient>
+      <linearGradient id="caseBody" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#D4DCE8" />
+        <stop offset="100%" stop-color="#C6D0DF" />
+      </linearGradient>
+    </defs>
+    <rect width="1024" height="1024" fill="url(#navyBg)" />
+    <g transform="translate(-4, -4)">
+      <path d="M 181 676 C 175 846, 395 885, 595 812 C 745 756, 828 655, 818 566" fill="none" stroke="url(#lowerOrbit)" stroke-width="22" stroke-linecap="round" />
+      <path d="M 181 676 C 148 485, 295 275, 520 198 C 718 130, 882 212, 856 368 C 838 468, 758 518, 672 544" fill="none" stroke="url(#upperOrbit)" stroke-width="38" stroke-linecap="round" />
+      <polygon points="374,296 766,296 711,408 448,408" fill="url(#topF)" />
+      <polygon points="341,458 658,458 604,566 439,566 378,790 254,790" fill="url(#midF)" />
+      <path d="M 640 634 L 640 598 C 640 581, 653 570, 672 570 L 690 570 C 709 570, 722 581, 722 598 L 722 634" fill="none" stroke="#D8E0EC" stroke-width="23" stroke-linecap="round" stroke-linejoin="round" />
+      <rect x="571" y="630" width="220" height="158" rx="34" ry="34" fill="url(#caseBody)" />
+      <path d="M 605 630 L 757 630 C 776 630, 791 645, 791 664 L 791 694 L 681 723 L 571 694 L 571 664 C 571 645, 586 630, 605 630 Z" fill="url(#caseTop)" />
+      <path d="M 569 694 L 681 725 L 793 694" fill="none" stroke="#0E1C36" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+      <rect x="663" y="694" width="36" height="45" rx="13" ry="13" fill="#3966DB" />
+    </g>
+  </svg>
